@@ -29,8 +29,12 @@ export default function RootLayout({
 			lang="en"
 			suppressHydrationWarning
 		>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<ThemeProviderWrapper>{children}</ThemeProviderWrapper>
+			<body
+				className={`${geistSans.variable} ${geistSans.className} ${geistMono.variable} antialiased`}
+			>
+				<ThemeProviderWrapper>
+					<main className="max-w-4xl mx-auto px-4 py-8">{children}</main>
+				</ThemeProviderWrapper>
 			</body>
 		</html>
 	)

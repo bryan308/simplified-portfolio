@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const personalInfo = {
+	profile: "/shadcn.jpg",
 	name: "Cedric Angulo",
 	address: "Nueva Ecija, Philippines",
 	profession: "BSIT Student",
@@ -19,10 +20,11 @@ const Profile: React.FC = () => {
 		<div className="flex gap-6 items-center">
 			<div>
 				<Image
-					src="/shadcn.jpg"
+					src={personalInfo.profile}
 					alt="Profile Picture"
 					width={160}
 					height={160}
+					priority
 					className="rounded-lg w-40"
 				/>
 			</div>

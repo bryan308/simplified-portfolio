@@ -5,6 +5,7 @@ import Profile from "@/components/shared/profile"
 import RecentProjects from "@/components/shared/recent-projects"
 import TechStack from "@/components/shared/tech-stack"
 import { AppWindow, Briefcase, Cpu, GraduationCap, Mail } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
 	return (
@@ -18,9 +19,18 @@ export default function Home() {
 					icon={<Briefcase className="size-5" />}
 				>
 					<p>
-						As a second-year BSIT student at Nueva Ecija University of Science and Technology, I‘m
-						passionate about web development. I‘m particularly interested in frontend development,
-						but I also want to be backend and become versatile and work well in a team.
+						I‘m Cedric Angulo, a second year student at{" "}
+						<Link
+							href="https://neust.edu.ph/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="underline underline-offset-0 hover:underline-offset-2 transition-all"
+						>
+							NEUST
+						</Link>
+						, passionate about web development. I‘m particularly interested in frontend development,
+						but I‘m also eager to expand my skills to include backend development, aiming to become
+						a versatile and collaborative team player.
 					</p>
 					<p className="mt-6">
 						I‘m currently exploring various tools and technologies, including Next.js App Router and

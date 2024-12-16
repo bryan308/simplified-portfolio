@@ -4,27 +4,27 @@ import { Badge } from "@/components/ui/badge"
 const educationData = [
 	{
 		title: "2nd Year BSIT",
-		year: "2024 - 2025",
+		year: "2024",
 		institution: "Nueva Ecija University of Science and Technology",
 	},
 	{
 		title: "1st Year BSIT",
-		year: "2023 - 2024",
+		year: "2023",
 		institution: "Nueva Ecija University of Science and Technology",
 	},
 	{
 		title: "Grade 12 TVL-ICT",
-		year: "2022 - 2023",
+		year: "2022",
 		institution: "Santa Rosa National High School",
 	},
 	{
 		title: "Grade 11 TVL-ICT",
-		year: "2021 - 2022",
+		year: "2021",
 		institution: "Zambales National High School",
 	},
 	{
 		title: "Grade 10 ICT",
-		year: "2019 - 2020",
+		year: "2019",
 		institution: "Locloc National High School",
 	},
 ]

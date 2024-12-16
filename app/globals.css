@@ -78,4 +78,17 @@
 	p {
 		@apply leading-7;
 	}
+
+	@keyframes pulse-border {
+		0% {
+			box-shadow: 0 0 0 0 hsl(var(--foreground) / 0.8);
+		}
+		50% {
+			box-shadow: 0 0 0 2px hsl(var(--foreground) / 0);
+		}
+	}
+
+	.animate-pulse-border {
+		animation: pulse-border 1s ease infinite;
+	}
 }

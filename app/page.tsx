@@ -1,4 +1,5 @@
 import BentoCard from "@/components/shared/bento-card"
+import EducationTimeline from "@/components/shared/education"
 import Profile from "@/components/shared/profile"
 import TechStack from "@/components/shared/tech-stack"
 import { Briefcase, Cpu, GraduationCap } from "lucide-react"
@@ -10,7 +11,7 @@ export default function Home() {
 			<div className="grid gap-2 grid-cols-1 lg:grid-cols-6 w-full mt-8">
 				<BentoCard
 					colSpan="col-span-6 md:col-span-4"
-					rowSpan="row-span-1 md:row-span-2"
+					rowSpan="row-span-1 md:row-span-3"
 					title="About"
 					icon={<Briefcase className="size-5" />}
 				>
@@ -31,7 +32,7 @@ export default function Home() {
 					title="Education"
 					icon={<GraduationCap className="size-5" />}
 				>
-					.
+					<EducationTimeline />
 				</BentoCard>
 				<BentoCard
 					colSpan="col-span-6 md:col-span-4"

@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const personalInfo = {
-	profile: "/shadcn.jpg",
+	profile: "/me.jpg",
 	name: "Cedric Angulo",
 	address: "Nueva Ecija, Philippines",
-	profession: "BSIT Student",
+	profession: "BS Information Technology Student",
 	email: "cdrcangulo@gmail.com",
 }
 
@@ -41,11 +41,15 @@ const Profile: React.FC = () => {
 				<div className="mt-4">
 					<Button
 						variant="secondary"
-						className="text-sm rounded-lg"
+						className="text-xs rounded-lg"
 						asChild
 					>
-						<Link href={`mailto:${personalInfo.email}`}>
-							<MailIcon /> Send Email
+						<Link
+							href={`mailto:${personalInfo.email}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<MailIcon className="size-2" /> Send Email
 						</Link>
 					</Button>
 				</div>

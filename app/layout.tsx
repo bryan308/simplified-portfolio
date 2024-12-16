@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 	description:
 		"Frontend Developer and a second year student at NEUST, based in Nueva Ecija, Philippines.",
 	openGraph: {
-		title: "Simplified Portfolio",
+		title: "Cedric Angulo - Frontend Developer",
 		description:
 			"Frontend Developer and a second year student at NEUST, based in Nueva Ecija, Philippines.",
 		images: [`https://cedricangulo.vercel.app/og-image.png`],

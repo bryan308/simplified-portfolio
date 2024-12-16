@@ -31,14 +31,19 @@ const RecentProjects: React.FC = () => {
 			{projects.map((project, index) => (
 				<Link
 					key={index}
-					className="border p-2 rounded-lg hover:border-primary/30"
+					className="border p-2 rounded-lg hover:shadow-md transition-shadow"
 					href={project.url}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<h4 className="text-base font-semibold">{project.title}</h4>
 					<p className="text-sm">{project.description}</p>
-					<Badge variant="secondary" className="font-normal">{project.url}</Badge>
+					<Badge
+						variant="secondary"
+						className="font-normal"
+					>
+						{project.url}
+					</Badge>
 				</Link>
 			))}
 		</div>

@@ -1,5 +1,9 @@
+"use client"
+
 import { cn } from "@/lib/utils"
 import React, { ReactNode, ReactElement } from "react"
+import { motion } from "motion/react"
+
 import Image from "next/image"
 import { Square } from "lucide-react"
 
@@ -10,10 +14,24 @@ const BentoCard: React.FC<{
 	icon?: ReactElement | ReactElement<typeof Image>
 	colSpan?: string
 	rowSpan?: string
-}> = ({ children, className, title, icon = <Square />, colSpan, rowSpan, ...props }) => {
+	delay?: number
+}> = ({ children, className, title, icon = <Square />, colSpan, rowSpan, delay = 0, ...props }) => {
 	return (
-		<div
-			className={cn("border bg-card p-4 rounded-lg", colSpan, rowSpan, className)}
+		<motion.div
+			initial={{ opacity: 0, y: "1rem", filter: "blur(4px)" }}
+			animate={{ opacity: 1, y: "0", filter: "blur(0)" }}
+			exit={{ opacity: 1, y: "0", filter: "blur(0)" }}
+			transition={{
+				delay: delay,
+				duration: 0.75,
+				ease: "easeInOut",
+			}}
+			className={cn(
+				"border bg-card p-4 rounded-lg hover:shadow-md transition-shadow",
+				colSpan,
+				rowSpan,
+				className
+			)}
 			{...props}
 		>
 			<div className="flex items-center mb-2">
@@ -21,7 +39,7 @@ const BentoCard: React.FC<{
 				<h4 className="text-lg">{title}</h4>
 			</div>
 			{children}
-		</div>
+		</motion.div>
 	)
 }
 BentoCard.displayName = "BentoCard"

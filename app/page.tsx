@@ -25,7 +25,7 @@ export default function Home() {
 							href="https://neust.edu.ph/"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="underline underline-offset-0 hover:underline-offset-2 transition-all"
+							className="underline underline-offset-1 hover:underline-offset-2 transition-all"
 						>
 							NEUST
 						</Link>

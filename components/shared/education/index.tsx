@@ -41,14 +41,19 @@ const EducationTimeline: React.FC = () => {
 						className={`absolute size-3 ${
 							index === 0
 								? "bg-zinc-700 dark:bg-zinc-400 animate-pulse-border"
-								: "bg-background border border-border"
+								: "bg-background border border-border group-hover:bg-zinc-400 transition-colors"
 						} rounded-full top-1 -left-[1.4rem] z-10`}
 					/>
 					<div className="flex justify-between items-center">
 						<h4 className="text-base font-semibold">{item.title}</h4>
-						<Badge variant="outline">{item.year}</Badge>
+						<Badge
+							variant="outline"
+							className="group-hover:-translate-x-1 transition-transform"
+						>
+							{item.year}
+						</Badge>
 					</div>
-					<p className="text-xs text-gray-400 group-hover:text-primary transition-all">
+					<p className="text-xs text-gray-400 group-hover:text-primary transition-colors">
 						{item.institution}
 					</p>
 				</div>

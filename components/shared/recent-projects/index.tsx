@@ -31,7 +31,7 @@ const RecentProjects: React.FC = () => {
 			{projects.map((project, index) => (
 				<Link
 					key={index}
-					className="border p-2 rounded-lg hover:shadow-md transition-shadow"
+					className="border p-2 rounded-lg hover:-translate-y-px hover:border-primary/30 hover:shadow-md transition-all"
 					href={project.url}
 					target="_blank"
 					rel="noopener noreferrer"

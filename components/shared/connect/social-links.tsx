@@ -29,7 +29,7 @@ const SocialLinks = () => {
 					href={link.href}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="inline w-full mt-2"
+					className="inline w-full mt-2 group"
 				>
 					<Badge
 						variant="secondary"
@@ -39,7 +39,7 @@ const SocialLinks = () => {
 							role="img"
 							viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg"
-							className="fill-zinc-600 dark:fill-zinc-400 size-6"
+							className="fill-zinc-600 dark:fill-zinc-400 size-6 group-hover:fill-zinc-700 dark:group-hover:fill-zinc-200"
 						>
 							<title>{link.title}</title>
 							<path d={link.path} />

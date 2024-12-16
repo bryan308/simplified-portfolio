@@ -31,7 +31,7 @@ const educationData = [
 
 const EducationTimeline: React.FC = () => {
 	return (
-		<div className="border-l border-zinc-400 pl-4">
+		<div className="border-l border-border pl-4 ml-2">
 			{educationData.map((item, index) => (
 				<div
 					className="relative mt-6 group"
@@ -41,7 +41,7 @@ const EducationTimeline: React.FC = () => {
 						className={`absolute size-3 ${
 							index === 0
 								? "bg-zinc-700 dark:bg-zinc-400 animate-pulse-border"
-								: "bg-zinc-100 dark:bg-zinc-700 border border-zinc-400"
+								: "bg-background border border-border"
 						} rounded-full top-1 -left-[1.4rem] z-10`}
 					/>
 					<div className="flex justify-between items-center">

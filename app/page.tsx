@@ -11,7 +11,7 @@ export default function Home() {
 	return (
 		<>
 			<Profile />
-			<div className="grid gap-2 grid-cols-1 lg:grid-cols-6 w-full mt-8">
+			<div className="grid gap-2 grid-cols-6 w-full mt-8">
 				<BentoCard
 					colSpan="col-span-6 md:col-span-4"
 					rowSpan="row-span-1 md:row-span-2"
@@ -56,7 +56,7 @@ export default function Home() {
 				</BentoCard>
 				<BentoCard
 					colSpan="col-span-6 md:col-span-2"
-					rowSpan="row-span-2"
+					rowSpan="row-span-1 md:row-span-2"
 					title="Connect"
 					icon={<Mail className="size-5" />}
 				>

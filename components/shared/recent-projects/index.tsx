@@ -10,7 +10,7 @@ const projects = [
 	},
 	{
 		title: "CA Resources",
-		description: "Open Source Project",
+		description: "Valuable resources and guides",
 		url: "https://ca-resources.vercel.app",
 	},
 	{
@@ -21,7 +21,7 @@ const projects = [
 	{
 		title: "Techno Odyssey",
 		description: "CICT Technoday 2024 entry",
-		url: "https://technodyssey.vercel.app/",
+		url: "https://technodyssey.vercel.app",
 	},
 ]
 
@@ -38,7 +38,7 @@ const RecentProjects: React.FC = () => {
 				>
 					<h4 className="text-base font-semibold">{project.title}</h4>
 					<p className="text-sm">{project.description}</p>
-					<Badge variant="secondary">{project.url}</Badge>
+					<Badge variant="secondary" className="font-normal">{project.url}</Badge>
 				</Link>
 			))}
 		</div>

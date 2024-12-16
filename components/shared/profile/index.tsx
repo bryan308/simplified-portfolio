@@ -11,7 +11,7 @@ const personalInfo = {
 	profile: "/me.jpg",
 	name: "Cedric Angulo",
 	address: "Nueva Ecija, Philippines",
-	profession: "BS Information Technology Student",
+	profession: "BS Information Technology",
 	email: "cdrcangulo@gmail.com",
 }
 
@@ -40,7 +40,7 @@ const Profile: React.FC = () => {
 				<h4 className="mt-2">{personalInfo.profession}</h4>
 				<div className="mt-4">
 					<Button
-						variant="secondary"
+						variant="outline"
 						className="text-xs rounded-lg"
 						asChild
 					>

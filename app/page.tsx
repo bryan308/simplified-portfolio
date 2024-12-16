@@ -1,101 +1,81 @@
-import Image from "next/image";
+import BentoCard from "@/components/shared/bento-card"
+import Connect from "@/components/shared/connect"
+import EducationTimeline from "@/components/shared/education"
+import Profile from "@/components/shared/profile"
+import RecentProjects from "@/components/shared/recent-projects"
+import TechStack from "@/components/shared/tech-stack"
+import { AppWindow, Briefcase, Cpu, GraduationCap, Mail } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	return (
+		<>
+			<Profile />
+			<div className="grid gap-2 grid-cols-6 w-full mt-8">
+				<BentoCard
+					delay={0.5}
+					colSpan="col-span-6 md:col-span-4"
+					rowSpan="row-span-1 md:row-span-2"
+					title="About"
+					icon={<Briefcase className="size-5" />}
+				>
+					<p>
+						I‘m Cedric Angulo, a second year student at{" "}
+						<Link
+							href="https://neust.edu.ph/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="underline underline-offset-1 hover:underline-offset-2 transition-all"
+						>
+							NEUST
+						</Link>
+						, passionate about web development. I‘m particularly interested in frontend development,
+						but I‘m also eager to expand my skills to include backend development, aiming to become
+						a versatile and collaborative team player.
+					</p>
+					<p className="mt-6">
+						I‘m currently exploring various tools and technologies, including Next.js App Router and
+						Tailwind CSS, which I find super productive. To expand my skills, I plan to learn
+						Laravel to build full-stack applications and stay adaptable in my career.
+					</p>
+				</BentoCard>
+				<BentoCard
+					delay={0.75}
+					colSpan="col-span-6 md:col-span-2"
+					rowSpan="row-span-1 md:row-span-3"
+					title="Education"
+					icon={<GraduationCap className="size-5" />}
+				>
+					<EducationTimeline />
+				</BentoCard>
+				<BentoCard
+					delay={1}
+					colSpan="col-span-6 md:col-span-4"
+					rowSpan="row-span-1 md:row-span-2"
+					title="Recent Projects"
+					icon={<AppWindow className="size-5" />}
+				>
+					<RecentProjects />
+				</BentoCard>
+				<BentoCard
+					delay={1.5}
+					colSpan="col-span-6 md:col-span-2"
+					rowSpan="row-span-1 md:row-span-2"
+					title="Connect"
+					icon={<Mail className="size-5" />}
+				>
+					<Connect />
+				</BentoCard>
+				<BentoCard
+					delay={1.75}
+					colSpan="col-span-6 md:col-span-4"
+					rowSpan="row-span-1"
+					title="Tech Stack"
+					icon={<Cpu className="size-5" />}
+				>
+					<TechStack />
+				</BentoCard>
+			</div>
+		</>
+	)
 }

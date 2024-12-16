@@ -3,6 +3,8 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import ThemeProviderWrapper from "@/components/shared/theme-provider"
+import Footer from "@/components/shared/footer"
+import LenisWrapper from "@/components/shared/lenis-wrapper"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -29,8 +31,17 @@ export default function RootLayout({
 			lang="en"
 			suppressHydrationWarning
 		>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<ThemeProviderWrapper>{children}</ThemeProviderWrapper>
+			<body
+				className={`${geistSans.variable} ${geistSans.className} ${geistMono.variable} antialiased`}
+			>
+				<LenisWrapper>
+					<ThemeProviderWrapper>
+						<main className="max-w-4xl mx-auto px-4 pt-8">
+							{children}
+							<Footer />
+						</main>
+					</ThemeProviderWrapper>
+				</LenisWrapper>
 			</body>
 		</html>
 	)

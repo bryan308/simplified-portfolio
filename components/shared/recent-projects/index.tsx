@@ -6,26 +6,33 @@ import Image from "next/image"
 
 const projects = [
 	{
+		title: "Pokemon Grading Tool",
+		description:
+			"A specialized tool for Pokemon card analysis with real-time market data integration and automated price comparison.",
+		url: "https://pokemon-proxx.vercel.app",
+		image: "/tcg-tool.png",
+	},
+	{
 		title: "Personal Website",
-		description: "Built with Next.js and Tailwind",
+		description: "Rainiel's personal website, that showcases his works and information of himself.",
 		url: "https://rnlsevilla.vercel.app",
 		image: "/personal-website.png",
 	},
 	{
 		title: "CA Resources",
-		description: "Valuable resources and guides",
+		description: "Website that provides valuable resources and guides to improve productivity.",
 		url: "https://ca-resources.vercel.app",
 		image: "/ca-resources.jpg",
 	},
 	{
 		title: "WebWise",
-		description: "Learn web development",
+		description: "A website where you can start learning web dvelopment.",
 		url: "https://webwisee.vercel.app",
 		image: "/webwise.jpeg",
 	},
 	{
 		title: "Techno Odyssey",
-		description: "CICT Technoday 2024 entry",
+		description: "CICT Technoday 2024 entry, featuring future technologies.",
 		url: "https://technodyssey.vercel.app",
 		image: "/technodyssey-mobile.jpg",
 	},
@@ -52,9 +59,7 @@ const ProjectTooltip: React.FC<ProjectTooltipProps> = ({ children, image, descri
 							quality={100}
 							alt="Content image"
 						/>
-						<div className="text-center">
-							<p className="hidden md:block text-sm text-foreground max-w-xs">{description}</p>
-						</div>
+						<p className="hidden md:block text-sm text-foreground max-w-xs">{description}</p>
 					</div>
 				</TooltipContent>
 			</Tooltip>
@@ -74,18 +79,20 @@ const RecentProjects: React.FC = () => {
 				>
 					<Link
 						className="border p-2 rounded-lg hover:-translate-y-px hover:border-primary/30 hover:shadow-md transition-all"
-						href={project.url}
+						href={project.url || ""}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<h4 className="text-base font-semibold">{project.title}</h4>
 						<p className="block md:hidden text-sm">{project.description}</p>
-						<Badge
-							variant="secondary"
-							className="font-normal"
-						>
-							{project.url}
-						</Badge>
+						{project.url && (
+							<Badge
+								variant="secondary"
+								className="font-normal"
+							>
+								{project.url}
+							</Badge>
+						)}
 					</Link>
 				</ProjectTooltip>
 			))}

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 const educationData = [
 	{
 		title: "2nd Year BSIT",
-		year: "2024",
+		year: "2024 - Present",
 		institution: "Nueva Ecija University of Science and Technology",
 	},
 	{

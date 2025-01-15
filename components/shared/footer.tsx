@@ -11,11 +11,11 @@ const Footer: React.FC = () => {
 			animate={{ opacity: 1, filter: "blur(0)" }}
 			exit={{ opacity: 1, y: "0", filter: "blur(0)" }}
 			transition={{ delay: 2, duration: 0.75, ease: "easeInOut" }}
-			className="flex flex-col md:flex-row justify-between max-w-4xl mx-auto border-t mt-20 py-6 md:py-12"
+			className="flex flex-col md:flex-row justify-between max-w-4xl mx-auto border-t mt-20 py-6 md:py-12 text-sm"
 			aria-label="Footer"
 		>
-			<p className="text-sm">© 2024 Cedric Angulo. All rights reserved.</p>
-			<p className="text-sm">
+			<p>© {new Date().getFullYear()} Cedric Angulo. All rights reserved.</p>
+			<p>
 				Inspired by the work of Sir{" "}
 				<Link
 					href="https://bryllim.com"
@@ -29,5 +29,6 @@ const Footer: React.FC = () => {
 		</motion.footer>
 	)
 }
+Footer.displayName = "Footer"
 
 export default Footer

@@ -65,6 +65,7 @@ export default function Home() {
 					rowSpan="row-span-1 md:row-span-2"
 					title="Connect"
 					icon={<Mail className="size-5" />}
+					className="hidden md:block"
 				>
 					<Connect />
 				</BentoCard>
@@ -74,8 +75,29 @@ export default function Home() {
 					rowSpan="row-span-1"
 					title="Tech Stack"
 					icon={<Cpu className="size-5" />}
+					className="hidden md:block"
 				>
 					<TechStack />
+				</BentoCard>
+				<BentoCard
+					delay={1.75}
+					colSpan="col-span-6 md:col-span-4"
+					rowSpan="row-span-1"
+					title="Tech Stack"
+					icon={<Cpu className="size-5" />}
+					className="md:hidden block"
+				>
+					<TechStack />
+				</BentoCard>
+				<BentoCard
+					delay={1.5}
+					colSpan="col-span-6 md:col-span-2"
+					rowSpan="row-span-1 md:row-span-2"
+					title="Connect"
+					icon={<Mail className="size-5" />}
+					className="md:hidden block"
+				>
+					<Connect />
 				</BentoCard>
 			</div>
 		</>

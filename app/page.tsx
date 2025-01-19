@@ -1,9 +1,11 @@
-import BentoCard from "@/components/shared/bento-card"
-import Connect from "@/components/shared/connect"
-import EducationTimeline from "@/components/shared/education"
-import Profile from "@/components/shared/profile"
-import RecentProjects from "@/components/shared/recent-projects"
-import TechStack from "@/components/shared/tech-stack"
+import {
+	BentoCard,
+	Connect,
+	EducationTimeline,
+	Profile,
+	RecentProjects,
+	TechStack,
+} from "@/components/shared"
 import { AppWindow, Briefcase, Cpu, GraduationCap, Mail } from "lucide-react"
 import Link from "next/link"
 
@@ -20,7 +22,7 @@ export default function Home() {
 					icon={<Briefcase className="size-5" />}
 				>
 					<p>
-						I‘m Cedric Angulo, a second year student at{" "}
+						I’m Cedric Angulo, a second year student at{" "}
 						<Link
 							href="https://neust.edu.ph/"
 							target="_blank"
@@ -29,12 +31,12 @@ export default function Home() {
 						>
 							NEUST
 						</Link>
-						, passionate about web development. I‘m particularly interested in frontend development,
-						but I‘m also eager to expand my skills to include backend development, aiming to become
+						, passionate about web development. I’m particularly interested in frontend development,
+						but I’m also eager to expand my skills to include backend development, aiming to become
 						a versatile and collaborative team player.
 					</p>
 					<p className="mt-6">
-						I‘m currently exploring various tools and technologies, including Next.js App Router and
+						I’m currently exploring various tools and technologies, including Next.js App Router and
 						Tailwind CSS, which I find super productive. To expand my skills, I plan to learn
 						Laravel to build full-stack applications and stay adaptable in my career.
 					</p>
@@ -63,6 +65,7 @@ export default function Home() {
 					rowSpan="row-span-1 md:row-span-2"
 					title="Connect"
 					icon={<Mail className="size-5" />}
+					className="hidden md:block"
 				>
 					<Connect />
 				</BentoCard>
@@ -72,8 +75,29 @@ export default function Home() {
 					rowSpan="row-span-1"
 					title="Tech Stack"
 					icon={<Cpu className="size-5" />}
+					className="hidden md:block"
 				>
 					<TechStack />
+				</BentoCard>
+				<BentoCard
+					delay={1.75}
+					colSpan="col-span-6 md:col-span-4"
+					rowSpan="row-span-1"
+					title="Tech Stack"
+					icon={<Cpu className="size-5" />}
+					className="md:hidden block"
+				>
+					<TechStack />
+				</BentoCard>
+				<BentoCard
+					delay={1.5}
+					colSpan="col-span-6 md:col-span-2"
+					rowSpan="row-span-1 md:row-span-2"
+					title="Connect"
+					icon={<Mail className="size-5" />}
+					className="md:hidden block"
+				>
+					<Connect />
 				</BentoCard>
 			</div>
 		</>

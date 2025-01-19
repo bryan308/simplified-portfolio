@@ -1,50 +1,66 @@
-import { Badge } from "@/components/ui/badge"
+import neustPortal from "@/public/neust-portal.png"
+import pokemon from "@/public/tcg-tool.png"
+import personalWebsite from "@/public/personal-website.png"
+import caResources from "@/public/ca-resources.jpg"
+import webwise from "@/public/webwise.jpeg"
+import technoOdyssey from "@/public/technodyssey-mobile.jpg"
+
 import Link from "next/link"
-import React from "react"
+import Image, { StaticImageData } from "next/image"
+import React, { FC } from "react"
+
+import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import Image from "next/image"
 
 const projects = [
+	{
+		title: "NEUST Portal",
+		description:
+			"Improved version of the official NEUST Portal, with a modern and responsive design.",
+		url: "https://neust-portal.vercel.app/",
+		image: neustPortal,
+	},
 	{
 		title: "Pokemon Grading Tool",
 		description:
 			"A specialized tool for Pokemon card analysis with real-time market data integration and automated price comparison.",
 		url: "https://pokemon-proxx.vercel.app",
-		image: "/tcg-tool.png",
+		image: pokemon,
 	},
 	{
 		title: "Personal Website",
 		description: "Rainiel's personal website, that showcases his works and information of himself.",
 		url: "https://rnlsevilla.vercel.app",
-		image: "/personal-website.png",
+		image: personalWebsite,
 	},
 	{
 		title: "CA Resources",
 		description: "Website that provides valuable resources and guides to improve productivity.",
 		url: "https://ca-resources.vercel.app",
-		image: "/ca-resources.jpg",
+		image: caResources,
 	},
 	{
 		title: "WebWise",
-		description: "A website where you can start learning web dvelopment.",
+		description: "A website where you can start learning web development.",
 		url: "https://webwisee.vercel.app",
-		image: "/webwise.jpeg",
+		image: webwise,
 	},
 	{
 		title: "Techno Odyssey",
 		description: "CICT Technoday 2024 entry, featuring future technologies.",
 		url: "https://technodyssey.vercel.app",
-		image: "/technodyssey-mobile.jpg",
+		image: technoOdyssey,
 	},
 ]
 
 interface ProjectTooltipProps {
-	image: string
+	image: string | StaticImageData
 	children: React.ReactNode
 	description: string
+	alt: string
 }
 
-const ProjectTooltip: React.FC<ProjectTooltipProps> = ({ children, image, description }) => {
+const ProjectTooltip: FC<ProjectTooltipProps> = ({ children, image, description, alt }) => {
 	return (
 		<TooltipProvider delayDuration={0}>
 			<Tooltip>
@@ -57,7 +73,8 @@ const ProjectTooltip: React.FC<ProjectTooltipProps> = ({ children, image, descri
 							width={141}
 							height={58}
 							quality={100}
-							alt="Content image"
+							priority
+							alt={alt}
 						/>
 						<p className="hidden md:block text-sm text-foreground max-w-xs">{description}</p>
 					</div>
@@ -75,6 +92,7 @@ const RecentProjects: React.FC = () => {
 				<ProjectTooltip
 					key={index}
 					image={project.image}
+					alt={project.title}
 					description={project.description}
 				>
 					<Link

@@ -22,7 +22,7 @@ export default function Home() {
 					icon={<Briefcase className="size-5" />}
 				>
 					<p>
-						I‘m Cedric Angulo, a second year student at{" "}
+						I’m Cedric Angulo, a second year student at{" "}
 						<Link
 							href="https://neust.edu.ph/"
 							target="_blank"
@@ -31,12 +31,12 @@ export default function Home() {
 						>
 							NEUST
 						</Link>
-						, passionate about web development. I‘m particularly interested in frontend development,
-						but I‘m also eager to expand my skills to include backend development, aiming to become
+						, passionate about web development. I’m particularly interested in frontend development,
+						but I’m also eager to expand my skills to include backend development, aiming to become
 						a versatile and collaborative team player.
 					</p>
 					<p className="mt-6">
-						I‘m currently exploring various tools and technologies, including Next.js App Router and
+						I’m currently exploring various tools and technologies, including Next.js App Router and
 						Tailwind CSS, which I find super productive. To expand my skills, I plan to learn
 						Laravel to build full-stack applications and stay adaptable in my career.
 					</p>

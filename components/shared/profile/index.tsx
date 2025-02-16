@@ -22,7 +22,7 @@ const AnimatefadeIn = (delay: number = 0) => ({
 	initial: { opacity: 0, y: "1.5rem", filter: "blur(4px)" },
 	animate: { opacity: 1, y: "0", filter: "blur(0)" },
 	exit: { opacity: 1, y: "0", filter: "blur(0)" },
-	transition: { delay, duration: 0.75, ease: "easeInOut" },
+	transition: { delay, duration: 0.3, ease: "easeInOut" },
 })
 
 const Profile: React.FC = () => {
@@ -64,7 +64,7 @@ const Profile: React.FC = () => {
 					{personalInfo.profession}
 				</motion.h4>
 				<motion.div
-					{...AnimatefadeIn(0.5)}
+					{...AnimatefadeIn(0.4)}
 					className="mt-4"
 				>
 					<Button

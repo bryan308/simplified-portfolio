@@ -15,7 +15,7 @@ export default function Home() {
 			<Profile />
 			<div className="grid gap-2 grid-cols-6 w-full mt-8">
 				<BentoCard
-					delay={0.5}
+					delay={0.4}
 					colSpan="col-span-6 md:col-span-4"
 					rowSpan="row-span-1 md:row-span-2"
 					title="About"
@@ -42,7 +42,7 @@ export default function Home() {
 					</p>
 				</BentoCard>
 				<BentoCard
-					delay={0.75}
+					delay={0.425}
 					colSpan="col-span-6 md:col-span-2"
 					rowSpan="row-span-1 md:row-span-3"
 					title="Education"
@@ -51,16 +51,19 @@ export default function Home() {
 					<EducationTimeline />
 				</BentoCard>
 				<BentoCard
-					delay={1}
+					delay={0.45}
 					colSpan="col-span-6 md:col-span-4"
 					rowSpan="row-span-1 md:row-span-2"
 					title="Recent Projects"
 					icon={<AppWindow className="size-5" />}
+					hasOwnPage
+					pathText="View all"
+					pagePath="/projects"
 				>
 					<RecentProjects />
 				</BentoCard>
 				<BentoCard
-					delay={1.5}
+					delay={0.475}
 					colSpan="col-span-6 md:col-span-2"
 					rowSpan="row-span-1 md:row-span-2"
 					title="Connect"
@@ -70,7 +73,7 @@ export default function Home() {
 					<Connect />
 				</BentoCard>
 				<BentoCard
-					delay={1.75}
+					delay={0.5}
 					colSpan="col-span-6 md:col-span-4"
 					rowSpan="row-span-1"
 					title="Tech Stack"
@@ -80,7 +83,7 @@ export default function Home() {
 					<TechStack />
 				</BentoCard>
 				<BentoCard
-					delay={1.75}
+					delay={0.5}
 					colSpan="col-span-6 md:col-span-4"
 					rowSpan="row-span-1"
 					title="Tech Stack"
@@ -90,7 +93,7 @@ export default function Home() {
 					<TechStack />
 				</BentoCard>
 				<BentoCard
-					delay={1.5}
+					delay={0.475}
 					colSpan="col-span-6 md:col-span-2"
 					rowSpan="row-span-1 md:row-span-2"
 					title="Connect"

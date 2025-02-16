@@ -2,8 +2,8 @@ import neustPortal from "@/public/neust-portal.png"
 import pokemon from "@/public/tcg-tool.png"
 import personalWebsite from "@/public/personal-website.png"
 import caResources from "@/public/ca-resources.jpg"
-import webwise from "@/public/webwise.jpeg"
-import technoOdyssey from "@/public/technodyssey-mobile.jpg"
+// import webwise from "@/public/webwise.jpeg"
+// import technoOdyssey from "@/public/technodyssey-mobile.jpg"
 
 import Link from "next/link"
 import Image, { StaticImageData } from "next/image"
@@ -38,18 +38,6 @@ const projects = [
 		description: "Website that provides valuable resources and guides to improve productivity.",
 		url: "https://ca-resources.vercel.app",
 		image: caResources,
-	},
-	{
-		title: "WebWise",
-		description: "A website where you can start learning web development.",
-		url: "https://webwisee.vercel.app",
-		image: webwise,
-	},
-	{
-		title: "Techno Odyssey",
-		description: "CICT Technoday 2024 entry, featuring future technologies.",
-		url: "https://technodyssey.vercel.app",
-		image: technoOdyssey,
 	},
 ]
 
@@ -96,7 +84,7 @@ const RecentProjects: React.FC = () => {
 					description={project.description}
 				>
 					<Link
-						className="border p-2 rounded-lg hover:-translate-y-px hover:border-primary/30 hover:shadow-md transition-all"
+						className="border p-2 rounded-lg hover:-translate-y-px focus:-translate-y-px hover:border-primary/30 focus:border-primary/30 hover:shadow-md focus:shadow-md transition-all"
 						href={project.url || ""}
 						target="_blank"
 						rel="noopener noreferrer"

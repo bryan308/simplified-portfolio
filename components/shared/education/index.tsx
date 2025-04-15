@@ -40,7 +40,7 @@ const EducationTimeline: React.FC = () => {
 					<div
 						className={`absolute size-3 ${
 							index === 0
-								? "bg-zinc-700 dark:bg-zinc-400 animate-pulse-border"
+								? "bg-zinc-700 dark:bg-zinc-400"
 								: "bg-background border border-border group-hover:bg-zinc-400 transition-colors"
 						} rounded-full top-1 -left-[1.4rem] z-10`}
 					/>

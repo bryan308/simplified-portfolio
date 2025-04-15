@@ -6,11 +6,11 @@ import caResources from "@/public/ca-resources.jpg"
 // import technoOdyssey from "@/public/technodyssey-mobile.jpg"
 
 import Link from "next/link"
-import Image, { StaticImageData } from "next/image"
-import React, { FC } from "react"
+// import Image, { StaticImageData } from "next/image"
+import React from "react"
 
 import { Badge } from "@/components/ui/badge"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+// import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 const projects = [
 	{
@@ -41,66 +41,84 @@ const projects = [
 	},
 ]
 
-interface ProjectTooltipProps {
-	image: string | StaticImageData
-	children: React.ReactNode
-	description: string
-	alt: string
-}
+// interface ProjectTooltipProps {
+// 	image: string | StaticImageData
+// 	children: React.ReactNode
+// 	description: string
+// 	alt: string
+// }
 
-const ProjectTooltip: FC<ProjectTooltipProps> = ({ children, image, description, alt }) => {
-	return (
-		<TooltipProvider delayDuration={0}>
-			<Tooltip>
-				<TooltipTrigger asChild>{children}</TooltipTrigger>
-				<TooltipContent className="py-2 bg-background border border-border">
-					<div className="space-y-1">
-						<Image
-							className="w-full rounded"
-							src={image}
-							width={141}
-							height={58}
-							quality={100}
-							priority
-							alt={alt}
-						/>
-						<p className="hidden md:block text-sm text-foreground max-w-xs">{description}</p>
-					</div>
-				</TooltipContent>
-			</Tooltip>
-		</TooltipProvider>
-	)
-}
-ProjectTooltip.displayName = "Project Tooltip"
+// const ProjectTooltip: FC<ProjectTooltipProps> = ({ children, image, description, alt }) => {
+// 	return (
+// 		<TooltipProvider delayDuration={0}>
+// 			<Tooltip>
+// 				<TooltipTrigger asChild>{children}</TooltipTrigger>
+// 				<TooltipContent className="py-2 bg-background border border-border">
+// 					<div className="space-y-1">
+// 						<Image
+// 							className="w-full rounded"
+// 							src={image}
+// 							width={141}
+// 							height={58}
+// 							quality={100}
+// 							priority
+// 							alt={alt}
+// 						/>
+// 						<p className="hidden md:block text-sm text-foreground max-w-xs">{description}</p>
+// 					</div>
+// 				</TooltipContent>
+// 			</Tooltip>
+// 		</TooltipProvider>
+// 	)
+// }
+// ProjectTooltip.displayName = "Project Tooltip"
 
 const RecentProjects: React.FC = () => {
 	return (
 		<div className="grid gap-2 grid-cols-1 md:grid-cols-2">
 			{projects.map((project, index) => (
-				<ProjectTooltip
+				<Link
 					key={index}
-					image={project.image}
-					alt={project.title}
-					description={project.description}
+					className="border p-2 rounded-lg hover:-translate-y-px focus:-translate-y-px hover:border-primary/30 focus:border-primary/30 hover:shadow-md focus:shadow-md transition-all"
+					href={project.url || ""}
+					target="_blank"
+					rel="noopener noreferrer"
 				>
-					<Link
-						className="border p-2 rounded-lg hover:-translate-y-px focus:-translate-y-px hover:border-primary/30 focus:border-primary/30 hover:shadow-md focus:shadow-md transition-all"
-						href={project.url || ""}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<h4 className="text-base font-semibold">{project.title}</h4>
-						<p className="block md:hidden text-sm">{project.description}</p>
-						{project.url && (
-							<Badge
-								variant="secondary"
-								className="font-normal"
-							>
-								{project.url}
-							</Badge>
-						)}
-					</Link>
-				</ProjectTooltip>
+					<h4 className="text-base font-semibold">{project.title}</h4>
+					<p className="block md:hidden text-sm">{project.description}</p>
+					{project.url && (
+						<Badge
+							variant="secondary"
+							className="font-normal"
+						>
+							{project.url}
+						</Badge>
+					)}
+				</Link>
+				// <ProjectTooltip
+				// 	key={index}
+				// 	image={project.image}
+				// 	alt={project.title}
+				// 	description={project.description}
+				// >
+				// 	<Link
+				// 		className="border p-2 rounded-lg hover:-translate-y-px focus:-translate-y-px hover:border-primary/30 focus:border-primary/30 hover:shadow-md focus:shadow-md transition-all"
+				// 		href={project.url || ""}
+				// 		target="_blank"
+				// 		rel="noopener noreferrer"
+				// 	>
+				// 		<h4 className="text-base font-semibold">{project.title}</h4>
+				// 		<p className="block md:hidden text-sm">{project.description}</p>
+				// 		{project.url && (
+				// 			<Badge
+				// 				variant="secondary"
+				// 				className="font-normal"
+				// 			>
+				// 				{project.url}
+				// 			</Badge>
+				// 		)}
+				// 	</Link>
+				// </ProjectTooltip>
 			))}
 		</div>
 	)
